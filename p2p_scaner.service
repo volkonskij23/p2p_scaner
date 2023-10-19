@@ -1,0 +1,13 @@
+[Unit]
+Description=Dummy Service
+After=multi-user.target
+Conflicts=getty@tty1.service
+
+[Service]
+WorkingDirectory=/root/p2p_parser_scaner
+Type=simple
+ExecStart=/usr/bin/python3 main.py
+Restart=on-failure
+RestartSec=5
+[Install]
+WantedBy=multi-user.target
